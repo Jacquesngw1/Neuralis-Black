@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Analysis</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .tab { display: none; }
+        .tab.active { display: block; }
+        .tabs { margin-bottom: 20px; }
+        .tabs button { margin-right: 5px; }
+        .score-card { border: 1px solid #ccc; padding: 15px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Tabbed Results Display</h1>
+    <div class="tabs">
+        <button data-target="#dimensions" class="tab-button">Dimensions</button>
+        <button data-target="#automation-opportunities" class="tab-button">Automation Opportunities</button>
+        <button data-target="#priority-actions" class="tab-button">Priority Actions</button>
+        <button data-target="#deliverable" class="tab-button">Deliverable</button>
+    </div>
+
+    <div id="dimensions" class="tab active">
+        <div class="score-card">
+            <h2>Dimensions Score</h2>
+            <p>Score: 80/100</p>
+        </div>
+    </div>
+    <div id="automation-opportunities" class="tab">
+        <div class="score-card">
+            <h2>Automation Opportunities Score</h2>
+            <p>Score: 75/100</p>
+        </div>
+    </div>
+    <div id="priority-actions" class="tab">
+        <div class="score-card">
+            <h2>Priority Actions Score</h2>
+            <p>Score: 90/100</p>
+        </div>
+    </div>
+    <div id="deliverable" class="tab">
+        <div class="score-card">
+            <h2>Deliverable Score</h2>
+            <p>Score: 85/100</p>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('.tab-button').click(function() {
+                var target = $(this).data('target');
+                $('.tab').removeClass('active');
+                $(target).addClass('active');
+            });
+        });
+    </script>
+</body>
+</html>
